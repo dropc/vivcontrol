@@ -1,0 +1,11 @@
+{
+	"name" : "VivControl",
+	"description" : "WebServer component of VivControl",
+	"verison" : "0.0.1",
+	"private" : "true",
+	"dependencies" : {
+		"express" : "3.x",
+		"body-parser" : "1.x",
+		"pg" : "4.x"
+	}
+} 

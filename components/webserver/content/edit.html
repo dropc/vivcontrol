@@ -1,0 +1,84 @@
+<datalist id="states">
+  <option value="Auto">
+  <option value="On">
+  <option value="Off">
+</datalist> 
+
+<div id="edit">
+	<p> Edit configuration </p>
+    <form action="/configs.json" method="POST">
+	<table>
+		<tr class="row_odd">
+			<td>Lights</td>
+			<td><input name="lights" type="text" list="states" value="{{lights}}"/></td>
+		</tr>
+		<tr class="row_odd">
+			<td>Light control GPIO pin</td>
+			<td><input name="lightpin" type="number" min="1" max="26" size="2" maxlength="2" value="{{lightpin}}"/></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr class="row_even">
+			<td>Heating</td>
+			<td><input name="heating" type="text" list="states" value="{{heating}}"/></td>
+		</tr>
+		<tr class="row_even">
+			<td>Heating control GPIO pin</td>
+			<td><input name="heatpin" type="number" min="1" max="26" size="2" maxlength="2" value="{{heatpin}}"/></td>
+		</tr>
+		<tr class="row_even">
+			<td>Warm area temperature GPIO pin</td>
+			<td><input name="sensorpin1"type="number" min="1" max="26" size="2" maxlength="2" value="{{sensorpin1}}"/></td>
+		</tr>
+		<tr class="row_even">
+			<td>Cool area temperature GPIO pin</td>
+			<td><input name="sensorpin2" type="number" min="1" max="26" size="2" maxlength="2" value="{{sensorpin2}}"/></td>
+		</tr>
+		<tr>
+		<tr class="row_even">
+			<td>Day temperature (Celsius)</td>
+			<td><input name="daytemp" type="number" min="0" max="50" size="2" maxlength="2" value="{{daytemp}}"/></td>
+		</tr>
+		<tr class="row_even">
+			<td>Night temperature (Celsius)</td>
+			<td><input name="nighttemp" type="number" min="0" max="50" size="2" maxlength="2" value="{{nighttemp}}"/></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr class="row_odd">
+			<td>Humidifier</td>
+			<td><input name="humidifier" type="text" list="states" value="{{humidifier}}"/></td>
+		</tr>
+		<tr class="row_odd">
+			<td>Humidifier control GPIO pin</td>
+			<td><input name="humpin" type="number" min="1" max="26" size="2" maxlength="2" value="{{humpin}}"/></td>
+		</tr>
+		<tr class="row_odd">
+			<td>Minimum Humidity (%)</td>
+			<td><input name="minhum" type="number" min="0" max="100" size="2" maxlength="2" value="{{minhum}}"/></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr class="row_even">
+			<td>Day Start (HH:MM)</td>
+			<td><input name="daytimestart" type="text" size="4" maxlength="4" value="{{daytimestart}}"/></td>
+		</tr>
+		<tr class="row_even">
+			<td>Day End (HH:MM)</td>
+			<td><input name="daytimeend" type="text" size="4" maxlength="4" value="{{daytimeend}}"/></td>
+		</tr>
+		<tr class="row_even">
+			<td>Check interval (min)</td>
+			<td><input name="checkinterval" type="text" size="2" maxlength="2" value="{{checkinterval}}"/></td>
+		</tr>
+	</table>
+	<input type="hidden" name="id" value="{{id}}"/>
+	<input type="submit" value="Save"/>
+	<input type="reset" value="Cancel" onclick="location.href = '/page/home';"/>
+</div>
